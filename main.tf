@@ -156,3 +156,36 @@ resource "aws_security_group" "db" {
     }
 }
 
+
+
+
+
+
+resource "aws_instance" "web" {
+    ami = "ami-02b3c03c6fadb6e2c"
+    instance_type = "t2.micro"
+
+    subnet_id = aws_subnet.public.id
+    vpc_security_group_ids = [aws_security_group.web.id]
+
+    tags = {
+        Name = "web-server"
+    }
+}
+
+
+resource "aws_instance" "db" {
+    ami = "ami-02b3c03c6fadb6e2c"
+    instance_type = "t2.micro"
+
+
+    subnet_id = aws_subnet.private.id
+    vpc_security_group_ids = [aws_security_group.db.id]
+
+    tags = {
+        Name = "db-server"
+    }
+}
+
+
+
