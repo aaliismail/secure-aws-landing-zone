@@ -7,7 +7,7 @@ This project uses Terraform to build a foundational, secure AWS environment from
 
 ## Architecture Diagram
 
-*(Here, you will insert a diagram of the infrastructure. See instructions below)*
+
 
 ![Architecture Diagram](architecture.png) 
 
